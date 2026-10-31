@@ -28,5 +28,13 @@
   },
   "devDependencies": {
     "homebridge": "^2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orrzy2/homebridge-keurig-smart.git"
+  },
+  "homepage": "https://github.com/Orrzy2/homebridge-keurig-smart#readme",
+  "bugs": {
+    "url": "https://github.com/Orrzy2/homebridge-keurig-smart/issues"
   }
 }

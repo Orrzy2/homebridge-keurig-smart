@@ -28,13 +28,13 @@ Status is checked every 60 seconds by default (minimum 30), and every 5 seconds 
 This plugin isn't on npm, so `hb-service add` won't work, because it only accepts npm package names. Install it with `npm` from the Homebridge terminal instead:
 
 1. In the Homebridge UI, tap **☰ → Terminal**. If you don't see Terminal, turn it on under **☰ → Settings → Terminal** first.
-2. Paste this single line and press Enter. Replace the URL with the link to the package you were given:
+2. Paste this single line and press Enter:
 
    ```
-   npm --prefix /var/lib/homebridge install <PACKAGE-URL>
+   npm --prefix /var/lib/homebridge install https://github.com/Orrzy2/homebridge-keurig-smart/archive/refs/heads/main.tar.gz
    ```
 
-   For example, `https://github.com/<you>/homebridge-keurig-smart/archive/refs/heads/main.tar.gz` or a link to `homebridge-keurig-smart-0.1.0.tgz`. This is exactly what `hb-service add` runs internally.
+   That URL downloads the latest code from this GitHub repository. This is exactly what `hb-service add` runs internally.
 3. Wait until it says `added 1 package`, then restart Homebridge (the ⏻ / restart icon at the top right).
 4. Go to **☰ → Plugins**, find **Keurig SMART**, tap **⋮ → Plugin Config** (or the settings/gear icon), then enter your **Keurig app email and password** and save.
 5. Restart Homebridge again. Your brewer appears in the Home app under the Homebridge bridge.
