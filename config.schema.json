@@ -2,7 +2,7 @@
   "pluginAlias": "KeurigSmart",
   "pluginType": "platform",
   "singular": true,
-  "headerDisplay": "Control a Keurig SMART brewer (K-Supreme SMART, K-Supreme Plus SMART, K-Café SMART) through the Keurig cloud. Use the same email and password you use in the Keurig app. This uses Keurig's unofficial app API and may stop working if Keurig changes it.",
+  "headerDisplay": "Control a Keurig SMART brewer (K-Supreme SMART, K-Supreme Plus SMART, K-Caf\u00e9 SMART) through the Keurig cloud. Use the same email and password you use in the Keurig app. This uses Keurig's unofficial app API and may stop working if Keurig changes it.",
   "footerDisplay": "Brewing needs water in the reservoir, a fresh pod and the lid closed. The Brew switch turns itself off when the brew finishes.",
   "schema": {
     "type": "object",
@@ -23,7 +23,9 @@
         "title": "Keurig app password",
         "type": "string",
         "required": true,
-        "x-schema-form": { "type": "password" }
+        "x-schema-form": {
+          "type": "password"
+        }
       },
       "pollInterval": {
         "title": "Status check interval (seconds)",
@@ -38,8 +40,18 @@
         "type": "string",
         "default": "recommended",
         "oneOf": [
-          { "title": "Recommended for the pod (falls back to custom)", "enum": ["recommended"] },
-          { "title": "Custom (temperature and strength below)", "enum": ["custom"] }
+          {
+            "title": "Recommended for the pod (falls back to custom)",
+            "enum": [
+              "recommended"
+            ]
+          },
+          {
+            "title": "Custom (temperature and strength below)",
+            "enum": [
+              "custom"
+            ]
+          }
         ]
       },
       "brewSize": {
@@ -47,11 +59,36 @@
         "type": "integer",
         "default": 8,
         "oneOf": [
-          { "title": "4 oz", "enum": [4] },
-          { "title": "6 oz", "enum": [6] },
-          { "title": "8 oz", "enum": [8] },
-          { "title": "10 oz", "enum": [10] },
-          { "title": "12 oz", "enum": [12] }
+          {
+            "title": "4 oz",
+            "enum": [
+              4
+            ]
+          },
+          {
+            "title": "6 oz",
+            "enum": [
+              6
+            ]
+          },
+          {
+            "title": "8 oz",
+            "enum": [
+              8
+            ]
+          },
+          {
+            "title": "10 oz",
+            "enum": [
+              10
+            ]
+          },
+          {
+            "title": "12 oz",
+            "enum": [
+              12
+            ]
+          }
         ]
       },
       "brewTemperature": {
@@ -59,12 +96,42 @@
         "type": "string",
         "default": "Hot",
         "oneOf": [
-          { "title": "Warm (187°F)", "enum": ["Warm"] },
-          { "title": "Warmer (191°F)", "enum": ["Warmer"] },
-          { "title": "Hot (194°F)", "enum": ["Hot"] },
-          { "title": "Hotter (197°F)", "enum": ["Hotter"] },
-          { "title": "Extra Hot (200°F)", "enum": ["XHot"] },
-          { "title": "Max Hot (204°F)", "enum": ["MaxHot"] }
+          {
+            "title": "Warm (187\u00b0F)",
+            "enum": [
+              "Warm"
+            ]
+          },
+          {
+            "title": "Warmer (191\u00b0F)",
+            "enum": [
+              "Warmer"
+            ]
+          },
+          {
+            "title": "Hot (194\u00b0F)",
+            "enum": [
+              "Hot"
+            ]
+          },
+          {
+            "title": "Hotter (197\u00b0F)",
+            "enum": [
+              "Hotter"
+            ]
+          },
+          {
+            "title": "Extra Hot (200\u00b0F)",
+            "enum": [
+              "XHot"
+            ]
+          },
+          {
+            "title": "Max Hot (204\u00b0F)",
+            "enum": [
+              "MaxHot"
+            ]
+          }
         ]
       },
       "brewIntensity": {
@@ -72,11 +139,36 @@
         "type": "string",
         "default": "Balanced",
         "oneOf": [
-          { "title": "Balanced", "enum": ["Balanced"] },
-          { "title": "Rich", "enum": ["Rich"] },
-          { "title": "Robust", "enum": ["Robust"] },
-          { "title": "Strong", "enum": ["Strong"] },
-          { "title": "Intense", "enum": ["Intense"] }
+          {
+            "title": "Balanced",
+            "enum": [
+              "Balanced"
+            ]
+          },
+          {
+            "title": "Rich",
+            "enum": [
+              "Rich"
+            ]
+          },
+          {
+            "title": "Robust",
+            "enum": [
+              "Robust"
+            ]
+          },
+          {
+            "title": "Strong",
+            "enum": [
+              "Strong"
+            ]
+          },
+          {
+            "title": "Intense",
+            "enum": [
+              "Intense"
+            ]
+          }
         ]
       },
       "autoPowerOn": {
@@ -99,11 +191,36 @@
         "type": "integer",
         "default": 8,
         "oneOf": [
-          { "title": "4 oz", "enum": [4] },
-          { "title": "6 oz", "enum": [6] },
-          { "title": "8 oz", "enum": [8] },
-          { "title": "10 oz", "enum": [10] },
-          { "title": "12 oz", "enum": [12] }
+          {
+            "title": "4 oz",
+            "enum": [
+              4
+            ]
+          },
+          {
+            "title": "6 oz",
+            "enum": [
+              6
+            ]
+          },
+          {
+            "title": "8 oz",
+            "enum": [
+              8
+            ]
+          },
+          {
+            "title": "10 oz",
+            "enum": [
+              10
+            ]
+          },
+          {
+            "title": "12 oz",
+            "enum": [
+              12
+            ]
+          }
         ]
       },
       "hotWaterTemperature": {
@@ -111,12 +228,42 @@
         "type": "string",
         "default": "MaxHot",
         "oneOf": [
-          { "title": "Warm (187°F)", "enum": ["Warm"] },
-          { "title": "Warmer (191°F)", "enum": ["Warmer"] },
-          { "title": "Hot (194°F)", "enum": ["Hot"] },
-          { "title": "Hotter (197°F)", "enum": ["Hotter"] },
-          { "title": "Extra Hot (200°F)", "enum": ["XHot"] },
-          { "title": "Max Hot (204°F)", "enum": ["MaxHot"] }
+          {
+            "title": "Warm (187\u00b0F)",
+            "enum": [
+              "Warm"
+            ]
+          },
+          {
+            "title": "Warmer (191\u00b0F)",
+            "enum": [
+              "Warmer"
+            ]
+          },
+          {
+            "title": "Hot (194\u00b0F)",
+            "enum": [
+              "Hot"
+            ]
+          },
+          {
+            "title": "Hotter (197\u00b0F)",
+            "enum": [
+              "Hotter"
+            ]
+          },
+          {
+            "title": "Extra Hot (200\u00b0F)",
+            "enum": [
+              "XHot"
+            ]
+          },
+          {
+            "title": "Max Hot (204\u00b0F)",
+            "enum": [
+              "MaxHot"
+            ]
+          }
         ]
       },
       "subscriptionKey": {
@@ -128,6 +275,17 @@
         "title": "Advanced: Keurig API URL",
         "description": "Leave blank to use https://iot.keurig.com/connected-platform/",
         "type": "string"
+      },
+      "showPowerSwitch": {
+        "title": "Show the Coffee Maker Power switch",
+        "type": "boolean",
+        "default": true
+      },
+      "brewSwitchName": {
+        "title": "Brew switch name",
+        "type": "string",
+        "default": "Brew",
+        "placeholder": "Brew"
       }
     }
   },
@@ -141,21 +299,37 @@
       "title": "Brew defaults",
       "expandable": true,
       "expanded": true,
-      "items": ["brewMode", "brewSize", "brewTemperature", "brewIntensity", "autoPowerOn"]
+      "items": [
+        "brewSwitchName",
+        "brewMode",
+        "brewSize",
+        "brewTemperature",
+        "brewIntensity",
+        "autoPowerOn"
+      ]
     },
     {
       "type": "fieldset",
       "title": "Extra accessories",
       "expandable": true,
       "expanded": false,
-      "items": ["showSensors", "showHotWaterSwitch", "hotWaterSize", "hotWaterTemperature"]
+      "items": [
+        "showPowerSwitch",
+        "showSensors",
+        "showHotWaterSwitch",
+        "hotWaterSize",
+        "hotWaterTemperature"
+      ]
     },
     {
       "type": "fieldset",
       "title": "Advanced",
       "expandable": true,
       "expanded": false,
-      "items": ["subscriptionKey", "apiUrl"]
+      "items": [
+        "subscriptionKey",
+        "apiUrl"
+      ]
     }
   ]
 }

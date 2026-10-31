@@ -95,3 +95,7 @@ node test/mock-server.js 18765   # fake Keurig cloud for running homebridge loca
 ## Credits
 
 API behaviour comes from pykeurig by Dominick Meglio (@dcmeglio), maintained by @jspeckman, @arketec and @AdamSand10 (MIT).
+
+### One-button mode (0.2.0)
+
+Set `showPowerSwitch: false` to hide the Coffee Maker Power switch, and `brewSwitchName` (e.g. "Brew 10 oz") with `brewSize: 10` for a single button that powers on and brews.

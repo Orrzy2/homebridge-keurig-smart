@@ -136,3 +136,20 @@ test('missing credentials: logs error and does nothing', async () => {
   assert.equal(p.disabled, true);
   assert.ok(log.lines.some(([l]) => l === 'error'));
 });
+
+test('one-button mode: power switch hidden, custom name, 10 oz brew with auto power-on', async () => {
+  const { api, mock, registered, brewer } = await boot(undefined, { showPowerSwitch: false, brewSwitchName: 'Brew 10 oz', brewSize: 10, showSensors: false, showHotWaterSwitch: false });
+  try {
+    const { Service, Characteristic } = api.hap;
+    const acc = registered[0];
+    assert.equal(svc(acc, api.hap, 'power'), undefined);
+    assert.equal(acc.services.filter((s) => s.UUID === Service.Switch.UUID).length, 1);
+    const b = svc(acc, api.hap, 'brew');
+    assert.equal(b.getCharacteristic(Characteristic.Name).value, 'Brew 10 oz');
+    await b.getCharacteristic(Characteristic.On).handleSetRequest(true);
+    await waitFor(() => mock.state.commands.some((c) => c.command_name === 'brew'));
+    assert.deepEqual(mock.state.commands.map((c) => c.command_name), ['idle', 'brew']);
+    assert.equal(mock.state.commands[1].params.size, 10);
+    brewer.refresh && await brewer.refresh().catch(() => {});
+  } finally { brewer.stop(); api.emit('shutdown'); await mock.close(); }
+});
